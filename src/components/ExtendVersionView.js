@@ -3,6 +3,7 @@ import {goBack, Link} from "route-lite";
 import VersionView from "./VersionView";
 import RefactoringListView from "./RefactoringListView";
 import VersionListView from "./VersionListView";
+import ExportView from "./ExportView";
 
 class ExtendVersionView extends React.Component {
 
@@ -55,7 +56,7 @@ class ExtendVersionView extends React.Component {
                         <h5 className={'text-center'}>Refactorings Applied</h5>
                         {refactoringsApplied}
                         {dirtyRefactorings}
-                        {refactoringsApplied.length == 0 && dirtyRefactorings.length == 0 && (
+                        {refactoringsApplied.length === 0 && dirtyRefactorings.length === 0 && (
                             <div className={"form-group"}>
                                 <p>This version has no refactorings.</p>
                             </div>
@@ -66,11 +67,15 @@ class ExtendVersionView extends React.Component {
                             className="fas fa-plus-circle"></i></a>
                     </div>,
                     <div className={'row uxpainter-long-row'}>
-                        <div className={'col-5'}>
+                        <div className={'col-4'}>
                             <Link className={'btn btn-secondary'} component={VersionListView}><i className="fas fa-arrow-circle-left"></i> Back</Link>
                         </div>
-                        <div className={'col-5'}>
+                        <div className={'col-4'}>
                             <Link className={'btn btn-dark'} onClick={this.updateVersion} component={VersionListView}>Save <i
+                                className="fas fa-save"></i></Link>
+                        </div>
+                        <div className={'col-4'}>
+                            <Link className={'btn btn-dark'} onClick={e => {e.preventDefault(); console.log("Exportando componente")}} component={ExportView}>Export<i
                                 className="fas fa-save"></i></Link>
                         </div>
                     </div>

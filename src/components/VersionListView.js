@@ -40,7 +40,7 @@ class VersionListView extends React.Component {
             <div className={'row col-12'}>
                 <div className={'col-6 offset-1'}>
                     <p className={'uxpainter-message'} style={{"font-size": "18px"}} data-tip={'Clone version'}>
-                        {version.getName()} {window.refactoringManager.getOriginalVersionName() == version.getName()
+                        {version.getName()} {window.refactoringManager.getOriginalVersionName() === version.getName()
                          && (<i className="fas fa-lock"></i>)}
                     </p>
                 </div>
@@ -50,7 +50,7 @@ class VersionListView extends React.Component {
                     </a>
                 </div>
                 <div className={'col-1'}>
-                    {window.refactoringManager.getOriginalVersionName() != version.getName() && (
+                    {window.refactoringManager.getOriginalVersionName() !== version.getName() && (
                     <a className={"uxpainter-icon-link"} data-version={i} onClick={this.handleEdit}>
                         <i data-version={i} className="fas fa-edit fa-lg"></i>
                     </a>)}

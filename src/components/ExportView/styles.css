@@ -1,0 +1,11 @@
+.optionsContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.divider {
+  width: 100%;
+  border: 1px solid black;
+  margin: 10px 0px;
+}
